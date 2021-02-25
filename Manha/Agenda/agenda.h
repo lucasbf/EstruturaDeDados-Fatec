@@ -30,6 +30,8 @@ typedef struct {
 // Operacoes - Agenda
 void inicializaAgenda(Agenda*);
 int inserePessoa(Agenda*,Pessoa);
+bool removePessoa(Agenda*,string);
+
 void imprimeAgenda(Agenda);
 void imprimePessoa(Pessoa);
 string formataData(Data);

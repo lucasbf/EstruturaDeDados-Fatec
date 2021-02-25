@@ -12,6 +12,18 @@ int inserePessoa(Agenda *ag, Pessoa pss) {
     return 1;
 }
 
+bool removePessoa(Agenda *ag, string nome) {
+    for (int i = 0; i < ag->qtd; ++i) {
+        if (ag->aniversariantes[i].nome == nome) {
+            for (int j = i; j < ag->qtd-1; j++)
+                ag->aniversariantes[j] = ag->aniversariantes[j+1];
+            ag->qtd--;
+            return true;
+        }
+    }
+    return false;
+}
+
 void imprimeAgenda(Agenda ag) {
     for (int i = 0; i < ag.qtd; ++i) {
         cout << "-------------" << endl;

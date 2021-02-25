@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     Agenda agenda_niver;
     int op = 0;
     Pessoa p;
+    string nome;
 
     inicializaAgenda(&agenda_niver);    
    
@@ -34,6 +35,15 @@ int main(int argc, char *argv[])
                 cout << "Nascimento: ";
                 cin >> p.nascimento.dia >> p.nascimento.mes >> p.nascimento.ano;
                 inserePessoa(&agenda_niver,p);
+                break;
+            case 2:
+                cout << "Excluir Pessoa" << endl;
+                cout << "Digite o nome da pessoa: ";
+                cin >> nome;
+                if (removePessoa(&agenda_niver,nome))
+                    cout << "Pessoa removida com sucesso!" << endl;
+                else
+                    cout << "Pessoa não encontrada!" << endl;
                 break;
             case 9:
                 cout << "Adeus!!!" << endl;
