@@ -4,14 +4,19 @@
 
 using namespace std;
 
+// Tipo Data
+typedef struct {
+    int dia;
+    int mes;
+    int ano;
+} Data;
+
 // Tipo Pessoa 
 // O que será armazenado na agenda
 typedef struct {
     string nome;
     string email;
-    int dia;
-    int mes;
-    int ano;
+    Data nascimento;
     // Flags Uteis
     int ativo;
 } Pessoa;
@@ -28,6 +33,10 @@ void inicializaAgenda(Agenda*);
 int inserePessoa(Agenda*,Pessoa);
 void imprimeAgenda(Agenda);
 int removePessoaPeloNome(Agenda*,string);
+void imprimePessoa(Pessoa);
+string formataData(Data);
+
+
 
 
 

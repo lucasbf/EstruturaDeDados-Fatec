@@ -24,16 +24,13 @@ int inserePessoa(Agenda *ag,Pessoa p) {
 
 void imprimeAgenda(Agenda ag) {
     cout << "--- Agenda --- " << endl;
-    for (int i = 0; i < ag.qtd; ++i) {
-        if(ag.aniversariantes[i].ativo == 0)
-            continue;
-        cout << "Nome: " << ag.aniversariantes[i].nome << endl;
-        cout << "Email: " << ag.aniversariantes[i].email << endl;
-        cout << "Nasc: ";
-        cout << ag.aniversariantes[i].dia << "/";
-        cout << ag.aniversariantes[i].mes << "/";
-        cout << ag.aniversariantes[i].ano << endl;
-        cout << "--------------------" << endl;   
+    int i, j;
+    for (i = j = 0; j < ag.qtd; ++i) {
+        if(ag.aniversariantes[i].ativo) {
+            imprimePessoa(ag.aniversariantes[i]);
+            cout << "--------------------" << endl;
+            ++j;
+        }
     }
 }
 
@@ -42,7 +39,18 @@ int removePessoaPeloNome(Agenda *ag,string nome) {
         if(nome == ag->aniversariantes[i].nome) {
             ag->aniversariantes[i].ativo = 0;
             ag->qtd--;
+            return 1;
         }   
     }
     return 0;
+}
+
+void imprimePessoa(Pessoa ps) {
+    cout << "Nome....: " << ps.nome << endl;
+    cout << "Email...: " << ps.email << endl;
+    cout << "Nasc....: " << formataData(ps.nascimento) << endl;
+}
+
+string formataData(Data dt) {
+    return to_string(dt.dia) + "/" + to_string(dt.mes) + "/" + to_string(dt.ano);
 }
