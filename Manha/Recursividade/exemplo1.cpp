@@ -10,7 +10,7 @@ void conta(int i) {
 }
 
 int fat(int n) {
-    return n == 0 ? 1 : n*fat(n-1);    
+    return n == 0 ? 1 : n*fat(n-1);
 }
 
 int main(int argc, char *argv[])
