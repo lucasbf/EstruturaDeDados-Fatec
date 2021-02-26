@@ -35,6 +35,14 @@ void imprimeAgenda(Agenda);
 int removePessoaPeloNome(Agenda*,string);
 void imprimePessoa(Pessoa);
 string formataData(Data);
+void consultaAgendaPeloMes(Agenda,int,int[MAX_AG],int*);
+
+
+
+
+
+
+
 
 
 

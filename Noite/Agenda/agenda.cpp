@@ -54,3 +54,35 @@ void imprimePessoa(Pessoa ps) {
 string formataData(Data dt) {
     return to_string(dt.dia) + "/" + to_string(dt.mes) + "/" + to_string(dt.ano);
 }
+
+void consultaAgendaPeloMes(Agenda ag,int mes,int idx[MAX_AG], int *n) {
+    *n = 0;
+    for (int i = 0; i < MAX_AG; ++i) {
+        if (ag.aniversariantes[i].ativo && ag.aniversariantes[i].nascimento.mes == mes) {
+            idx[*n] = i;
+            (*n)++;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
